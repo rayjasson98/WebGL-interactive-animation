@@ -194,7 +194,7 @@ function render() {
 
   for (const shape of shapes) {
     // Viewing
-    const { rotationAngle, textureImg } = settings[shape];
+    const { rotationAngle } = settings[shape];
     const { x: transX, y: transY, z: transZ } = translations[shape];
     const scale = scales[shape];
 
