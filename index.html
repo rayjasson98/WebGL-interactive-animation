@@ -151,8 +151,8 @@
         <div class="menu-content-group">
           <label for="ambient-reflection" class="menu-content-label-group">Ambient Reflection</label><br />
           <input type="range" name="ambient-reflection" data-light="ambient"
-            class="menu-content-slider-group light-input" min="0.0" max="1.0" step="0.1" value="0.0" />
-          <input type="text" data-light="ambient" class="textbox light-output" value="0.0" readonly /><br />
+            class="menu-content-slider-group light-input" min="0.0" max="1.0" step="0.1" value="0.5" />
+          <input type="text" data-light="ambient" class="textbox light-output" value="0.5" readonly /><br />
           <label for="ambient-color" class="menu-content-label-group">Ambient Colour</label><br />
           <input type="color" data-material="ambient" class="menu-content-colorpicker-group material-input"
             name="ambient-color" value="#ffffff" />
@@ -161,8 +161,8 @@
         <div class="menu-content-group">
           <label for="diffuse-reflection" class="menu-content-label-group">Diffuse Reflection</label><br />
           <input type="range" name="diffuse-reflection" data-light="diffuse"
-            class="menu-content-slider-group light-input" min="0.0" max="1.0" step="0.1" value="0.0" />
-          <input type="text" data-light="diffuse" class="textbox light-output" value="0.0" readonly /><br />
+            class="menu-content-slider-group light-input" min="0.0" max="1.0" step="0.1" value="0.5" />
+          <input type="text" data-light="diffuse" class="textbox light-output" value="0.5" readonly /><br />
           <label for="diffuse-color" class="menu-content-label-group">Diffuse Colour</label><br />
           <input type="color" data-material="diffuse" class="menu-content-colorpicker-group material-input"
             name="diffuse-color" value="#ffffff" />
@@ -171,8 +171,8 @@
         <div class="menu-content-group">
           <label for="specular-reflection" class="menu-content-label-group">Specular Reflection</label><br />
           <input type="range" name="specular-reflection" data-light="specular"
-            class="menu-content-slider-group light-input" min="0.0" max="1.0" step="0.1" value="0.0" />
-          <input type="text" data-light="specular" class="textbox light-output" value="0.0" readonly /><br />
+            class="menu-content-slider-group light-input" min="0.0" max="1.0" step="0.1" value="0.5" />
+          <input type="text" data-light="specular" class="textbox light-output" value="0.5" readonly /><br />
           <label for="specular-color" class="menu-content-label-group">Specular Colour</label><br />
           <input type="color" data-material="specular" class="menu-content-colorpicker-group material-input"
             name="specular-color" value="#ffffff" />
@@ -181,8 +181,8 @@
         <div class="menu-content-group">
           <label for="shininess-reflection" class="menu-content-label-group">Shininess</label><br />
           <input type="range" name="shininess-reflection" id="shininess-input" class="menu-content-slider-group"
-            min="0.0" max="1.0" step="0.1" value="0.0" />
-          <input type="text" id="shininess-output" class="textbox" value="0.0" readonly />
+            min="0.0" max="100.0" step="10.0" value="50.0" />
+          <input type="text" id="shininess-output" class="textbox" value="50" readonly />
         </div>
         <div class="menu-content-title">Light Position</div>
         <div class="menu-content-group">

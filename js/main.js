@@ -23,12 +23,12 @@ window.addEventListener("load", () => {
         y: 0.0,
       },
     },
-    shininess: 5.0,
+    shininess: 50.0,
     lightPosition: [0.0, 0.0, 0.0],
     light: {
-      ambient: 1.0,
-      diffuse: 1.0,
-      specular: 1.0,
+      ambient: 0.5,
+      diffuse: 0.5,
+      specular: 0.5,
     },
     material: {
       ambient: "#ffffff",
