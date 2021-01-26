@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <title>Interactive Animation</title>
 
-    <script id="vertex-shader" type="x-shader/x-vertex">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <title>Interactive Animation</title>
+
+  <script id="vertex-shader" type="x-shader/x-vertex">
       attribute vec4 vPosition;
       attribute vec4 vColor;
       attribute vec4 vNormal;
@@ -31,7 +32,7 @@
           gl_Position = projectionMatrix * modelViewMatrix * vPosition;
       }
     </script>
-    <script id="fragment-shader" type="x-shader/x-fragment">
+  <script id="fragment-shader" type="x-shader/x-fragment">
       precision mediump float;
 
       varying vec4 fColor;
@@ -64,126 +65,133 @@
         gl_FragColor = fColor * (texture2D(texture, fTexCoord));
       }
     </script>
-    <script type="text/javascript" src="Common/webgl-utils.js"></script>
-    <script type="text/javascript" src="Common/initShaders.js"></script>
-    <script type="text/javascript" src="Common/MV.js"></script>
-    <script type="text/javascript" src="index.js"></script>
-    <script type="text/javascript" src="main.js"></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+  <script type="text/javascript" src="Common/webgl-utils.js"></script>
+  <script type="text/javascript" src="Common/initShaders.js"></script>
+  <script type="text/javascript" src="Common/MV.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-  <body>
-    <div class="container">
-      <canvas id="gl-canvas" width="650" height="512">
-        Oops ... your browser doesn't support the HTML5 canvas element
-      </canvas>
-      <div class="menu">
-        <div class="menu-content">
+<body>
+  <div class="container">
+    <canvas id="gl-canvas" width="650" height="512">
+      Oops ... your browser doesn't support the HTML5 canvas element
+    </canvas>
+    <div class="menu">
+      <div class="menu-content">
+        <div class="menu-content-title">Shape 1</div>
+        <div class="menu-content-group">
+          <input type="button" class="menu-content-button-group" value="UP" />
+          <input type="button" class="menu-content-button-group" value="DOWN" />
+          <input type="button" class="menu-content-button-group" value="LEFT" />
+          <input type="button" class="menu-content-button-group" value="RIGHT" /><br />
+          <input type="button" class="menu-content-start-stop-group" value="START/STOP" /><br />
+          <select name="texture" class="menu-content-dropdown-group">
+            <option value="no-texture">No Texture</option>
+            <option value="image1">Image 1</option>
+            <option value="image2">Image 2</option>
+            <option value="image3">Image 3</option>
+          </select>
+        </div>
 
-          <div class="menu-content-title">Shape 1</div>
-          <div class="menu-content-group">
-            <input type="button" class="menu-content-button-group" value="UP">
-            <input type="button" class="menu-content-button-group" value="DOWN">
-            <input type="button" class="menu-content-button-group" value="LEFT">
-            <input type="button" class="menu-content-button-group" value="RIGHT"><br>
-            <input type="button" class="menu-content-start-stop-group" value="START/STOP"><br>
-            <select name="texture" class="menu-content-dropdown-group">
-              <option value="no-texture">No Texture</option>
-              <option value="image1">Image 1</option>
-              <option value="image2">Image 2</option>
-              <option value="image3">Image 3</option>
-            </select>
-          </div>
+        <div class="menu-content-title">Shape 2</div>
+        <div class="menu-content-group">
+          <input type="button" class="menu-content-button-group" value="UP" />
+          <input type="button" class="menu-content-button-group" value="DOWN" />
+          <input type="button" class="menu-content-button-group" value="LEFT" />
+          <input type="button" class="menu-content-button-group" value="RIGHT" /><br />
+          <input type="button" class="menu-content-start-stop-group" value="START/STOP" /><br />
+          <select name="texture" class="menu-content-dropdown-group">
+            <option value="no-texture">No Texture</option>
+            <option value="image1">Image 1</option>
+            <option value="image2">Image 2</option>
+            <option value="image3">Image 3</option>
+          </select>
+        </div>
 
-          <div class="menu-content-title">Shape 2</div>
-          <div class="menu-content-group">
-            <input type="button" class="menu-content-button-group" value="UP">
-            <input type="button" class="menu-content-button-group" value="DOWN">
-            <input type="button" class="menu-content-button-group" value="LEFT">
-            <input type="button" class="menu-content-button-group" value="RIGHT"><br>
-            <input type="button" class="menu-content-start-stop-group" value="START/STOP"><br>
-            <select name="texture" class="menu-content-dropdown-group">
-              <option value="no-texture">No Texture</option>
-              <option value="image1">Image 1</option>
-              <option value="image2">Image 2</option>
-              <option value="image3">Image 3</option>
-            </select>
-          </div>
+        <div class="menu-content-title">Shape 3</div>
+        <div class="menu-content-group">
+          <input type="button" class="menu-content-button-group" value="UP" />
+          <input type="button" class="menu-content-button-group" value="DOWN" />
+          <input type="button" class="menu-content-button-group" value="LEFT" />
+          <input type="button" class="menu-content-button-group" value="RIGHT" /><br />
+          <input type="button" class="menu-content-start-stop-group" value="START/STOP" /><br />
+          <select name="texture" class="menu-content-dropdown-group">
+            <option value="no-texture">No Texture</option>
+            <option value="image1">Image 1</option>
+            <option value="image2">Image 2</option>
+            <option value="image3">Image 3</option>
+          </select>
+        </div>
 
-          <div class="menu-content-title">Shape 3</div>
-          <div class="menu-content-group">
-            <input type="button" class="menu-content-button-group" value="UP">
-            <input type="button" class="menu-content-button-group" value="DOWN">
-            <input type="button" class="menu-content-button-group" value="LEFT">
-            <input type="button" class="menu-content-button-group" value="RIGHT"><br>
-            <input type="button" class="menu-content-start-stop-group" value="START/STOP"><br>
-            <select name="texture" class="menu-content-dropdown-group">
-              <option value="no-texture">No Texture</option>
-              <option value="image1">Image 1</option>
-              <option value="image2">Image 2</option>
-              <option value="image3">Image 3</option>
-            </select>
-          </div>
+        <div class="menu-content-title">Ambient Light</div>
+        <div class="menu-content-group">
+          <label for="ambient-reflection" class="menu-content-label-group">Ambient Reflection</label><br />
+          <input type="range" name="ambient-reflection" class="menu-content-slider-group settings" min="0.0" max="1.0"
+            step="0.1" value="0.0" />
+          <input type="text" class="textbox" value="0.0" readonly /><br />
 
-          <div class="menu-content-title">Ambient Light</div>
-          <div class="menu-content-group">
-            <label for="ambient-reflection" class=menu-content-label-group>Ambient Reflection</label><br>
-            <input type="range" name="ambient-reflection" class="menu-content-slider-group settings" min="0.0" max="1.0" step="0.1" value="0.0">
-            <input type="text" class="textbox" value="0.0" readonly><br>
+          <label for="ambient-color" class="menu-content-label-group">Ambient Colour</label><br />
+          <input type="color" class="menu-content-colorpicker-group" name="ambient-color" value="#ffffff" />
+        </div>
 
-            <label for="ambient-color" class="menu-content-label-group">Ambient Colour</label><br>
-            <input type="color" class="menu-content-colorpicker-group" name="ambient-color" value="#ffffff">
-          </div>
+        <div class="menu-content-title">Diffuse Light</div>
+        <div class="menu-content-group">
+          <label for="diffuse-reflection" class="menu-content-label-group">Diffuse Reflection</label><br />
+          <input type="range" name="diffuse-reflection" class="menu-content-slider-group settings" min="0.0" max="1.0"
+            step="0.1" value="0.0" />
+          <input type="text" class="textbox" value="0.0" readonly /><br />
 
-          <div class="menu-content-title">Diffuse Light</div>
-          <div class="menu-content-group">
-            <label for="diffuse-reflection" class="menu-content-label-group">Diffuse Reflection</label><br>
-            <input type="range" name="diffuse-reflection" class="menu-content-slider-group settings" min="0.0" max="1.0" step="0.1" value="0.0">
-            <input type="text" class="textbox" value="0.0" readonly><br>
+          <label for="diffuse-color" class="menu-content-label-group">Diffuse Colour</label><br />
+          <input type="color" class="menu-content-colorpicker-group" name="diffuse-color" value="#ffffff" />
+        </div>
 
-            <label for="diffuse-color" class="menu-content-label-group">Diffuse Colour</label><br>
-            <input type="color" class="menu-content-colorpicker-group" name="diffuse-color" value="#ffffff">
-          </div>
+        <div class="menu-content-title">Specular Light</div>
+        <div class="menu-content-group">
+          <label for="specular-reflection" class="menu-content-label-group">Specular Reflection</label><br />
+          <input type="range" name="specular-reflection" class="menu-content-slider-group settings" min="0.0" max="1.0"
+            step="0.1" value="0.0" />
+          <input type="text" class="textbox" value="0.0" readonly /><br />
 
-          <div class="menu-content-title">Specular Light</div>
-          <div class="menu-content-group">
-            <label for="specular-reflection" class="menu-content-label-group">Specular Reflection</label><br>
-            <input type="range" name="specular-reflection" class="menu-content-slider-group settings" min="0.0" max="1.0" step="0.1" value="0.0">
-            <input type="text" class="textbox" value="0.0" readonly><br>
-            
-            <label for="specular-color" class="menu-content-label-group">Specular Colour</label><br>
-            <input type="color" class="menu-content-colorpicker-group" name="specular-color" value="#ffffff">
-          </div>
+          <label for="specular-color" class="menu-content-label-group">Specular Colour</label><br />
+          <input type="color" class="menu-content-colorpicker-group" name="specular-color" value="#ffffff" />
+        </div>
 
-          <div class="menu-content-title">Material Shininess</div>
-          <div class="menu-content-group">
-            <label for="shininess-reflection" class="menu-content-label-group">Shininess Reflection</label><br>
-            <input type="range" name="shininess-reflection" class="menu-content-slider-group settings" min="0.0" max="1.0" step="0.1" value="0.0">
-            <input type="text" class="textbox" value="0.0" readonly>
-          </div>
+        <div class="menu-content-title">Material Shininess</div>
+        <div class="menu-content-group">
+          <label for="shininess-reflection" class="menu-content-label-group">Shininess Reflection</label><br />
+          <input type="range" name="shininess-reflection" class="menu-content-slider-group settings" min="0.0" max="1.0"
+            step="0.1" value="0.0" />
+          <input type="text" class="textbox" value="0.0" readonly />
+        </div>
 
-          <div class="menu-content-title">Light Position</div>
-          <div class="menu-content-group">
-            <label for="x" class="menu-content-label-group">X</label><br>
-            <input type="range" name="x" class="menu-content-slider-group settings" min="-1.0" max="1.0" step="0.1" value="-1.0">
-            <input type="text" class="textbox" value="0.0" readonly><br>
+        <div class="menu-content-title">Light Position</div>
+        <div class="menu-content-group">
+          <label for="x" class="menu-content-label-group">X</label><br />
+          <input type="range" name="x" class="menu-content-slider-group settings" min="-1.0" max="1.0" step="0.1"
+            value="-1.0" />
+          <input type="text" class="textbox" value="0.0" readonly /><br />
 
-            <label for="y" class="menu-content-label-group">Y</label><br>
-            <input type="range" name="y" class="menu-content-slider-group settings" min="-1.0" max="1.0" step="0.1" value="-1.0">
-            <input type="text" class="textbox" value="0.0" readonly><br>
+          <label for="y" class="menu-content-label-group">Y</label><br />
+          <input type="range" name="y" class="menu-content-slider-group settings" min="-1.0" max="1.0" step="0.1"
+            value="-1.0" />
+          <input type="text" class="textbox" value="0.0" readonly /><br />
 
-            <label for="z" class="menu-content-label-group">Z</label><br>
-            <input type="range" name="z" class="menu-content-slider-group settings" min="-1.0" max="1.0" step="0.1" value="-1.0">
-            <input type="text" class="textbox" value="0.0" readonly>
-          </div>
+          <label for="z" class="menu-content-label-group">Z</label><br />
+          <input type="range" name="z" class="menu-content-slider-group settings" min="-1.0" max="1.0" step="0.1"
+            value="-1.0" />
+          <input type="text" class="textbox" value="0.0" readonly />
         </div>
       </div>
     </div>
-    <img src="img/silver.jpg" crossorigin="anonymous" hidden />
-    <img src="img/earth.jpg" crossorigin="anonymous" hidden />
-    <img src="img/usm.jpg" crossorigin="anonymous" hidden />
-    <img src="img/charmander.jpg" crossorigin="anonymous" hidden />
-    <img src="img/totodile.jpg" crossorigin="anonymous" hidden />
-    <img src="img/chikorita.jpg" crossorigin="anonymous" hidden />
-  </body>
+  </div>
+  <img src="img/silver.jpg" crossorigin="anonymous" hidden />
+  <img src="img/earth.jpg" crossorigin="anonymous" hidden />
+  <img src="img/usm.jpg" crossorigin="anonymous" hidden />
+  <img src="img/charmander.jpg" crossorigin="anonymous" hidden />
+  <img src="img/totodile.jpg" crossorigin="anonymous" hidden />
+  <img src="img/chikorita.jpg" crossorigin="anonymous" hidden />
+</body>
+
 </html>
