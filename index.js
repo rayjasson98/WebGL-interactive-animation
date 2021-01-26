@@ -3,7 +3,6 @@ var gl;
 var program;
 
 // Vertices and Colors
-const shapes = ["cube", "sphere", "tetrahedron"];
 var points = [];
 var colors = [];
 var normals = [];
@@ -72,6 +71,7 @@ var lightPositionLoc, shininessLoc;
 var ambientProductLoc, diffuseProductLoc, specularProductLoc;
 
 // Texture mapping
+var textures = {};
 var texCoords = [];
 var texCoord = [vec2(0, 0), vec2(0, 1), vec2(1, 1), vec2(1, 0)];
 var texLoc;
@@ -115,6 +115,9 @@ function initGraphics() {
   specularProductLoc = gl.getUniformLocation(program, "specularProduct");
 
   // Texture mapping
+  for (const shape of shapes) {
+    configureTexture(shape, imgs[0]);
+  }
   texLoc = gl.getUniformLocation(program, "texture");
 
   // Vertices
@@ -151,6 +154,10 @@ function initGraphics() {
   let vTexCoord = gl.getAttribLocation(program, "vTexCoord");
   gl.vertexAttribPointer(vTexCoord, 2, gl.FLOAT, false, 0, 0);
   gl.enableVertexAttribArray(vTexCoord);
+
+  document.addEventListener("textureChanged", e => {
+    configureTexture(e.detail.shape, e.detail.textureImg);
+  });
 
   render();
 }
@@ -192,9 +199,9 @@ function render() {
     const scale = scales[shape];
 
     modelViewMatrix = mat4();
+    modelViewMatrix = mult(modelViewMatrix, translate(transX, transY, transZ));
     modelViewMatrix = mult(modelViewMatrix, rotateX(rotationAngle.x));
     modelViewMatrix = mult(modelViewMatrix, rotateY(rotationAngle.y));
-    modelViewMatrix = mult(modelViewMatrix, translate(transX, transY, transZ));
     modelViewMatrix = mult(modelViewMatrix, scalem(scale, scale, scale));
     gl.uniformMatrix4fv(modelViewMatrixLoc, false, flatten(modelViewMatrix));
 
@@ -206,7 +213,9 @@ function render() {
     gl.uniformMatrix3fv(normalMatrixLoc, false, flatten(normalMatrix));
 
     // Texture mapping
-    configureTexture(textureImg);
+    gl.activeTexture(gl.TEXTURE0);
+    gl.bindTexture(gl.TEXTURE_2D, textures[shape]);
+    gl.uniform1i(texLoc, 0);
 
     gl.drawArrays(gl.TRIANGLES, lengths[shape][0], lengths[shape][1]);
   }
@@ -214,10 +223,12 @@ function render() {
 }
 
 // Texture maping
-function configureTexture(image) {
-  let texture = gl.createTexture();
-  gl.activeTexture(gl.TEXTURE0);
-  gl.bindTexture(gl.TEXTURE_2D, texture);
+function configureTexture(shape, image) {
+  // Prevent memory leak
+  if (textures[shape] !== null) gl.deleteTexture(textures[shape]);
+
+  textures[shape] = gl.createTexture();
+  gl.bindTexture(gl.TEXTURE_2D, textures[shape]);
   gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
   gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, image);
 
@@ -231,7 +242,6 @@ function configureTexture(image) {
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
   }
-  gl.uniform1i(texLoc, 0);
 }
 
 function isPowerOf2(value) {

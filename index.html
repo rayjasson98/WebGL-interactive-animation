@@ -4,7 +4,6 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <title>Interactive Animation</title>
-
   <script id="vertex-shader" type="x-shader/x-vertex">
       attribute vec4 vPosition;
       attribute vec4 vColor;
@@ -80,108 +79,120 @@
     </canvas>
     <div class="menu">
       <div class="menu-content">
-        <div class="menu-content-title">Shape 1</div>
+        <div class="menu-content-title">Cube</div>
         <div class="menu-content-group">
-          <input type="button" class="menu-content-button-group" value="UP" />
-          <input type="button" class="menu-content-button-group" value="DOWN" />
-          <input type="button" class="menu-content-button-group" value="LEFT" />
-          <input type="button" class="menu-content-button-group" value="RIGHT" /><br />
-          <input type="button" class="menu-content-start-stop-group" value="START/STOP" /><br />
-          <select name="texture" class="menu-content-dropdown-group">
-            <option value="no-texture">No Texture</option>
-            <option value="image1">Image 1</option>
-            <option value="image2">Image 2</option>
-            <option value="image3">Image 3</option>
+          <input type="button" data-shape="cube" data-direction="up" class="menu-content-button-group direction-input"
+            value="UP" />
+          <input type="button" data-shape="cube" data-direction="down" class="menu-content-button-group direction-input"
+            value="DOWN" />
+          <input type="button" data-shape="cube" data-direction="left" class="menu-content-button-group direction-input"
+            value="LEFT" />
+          <input type="button" data-shape="cube" data-direction="right"
+            class="menu-content-button-group direction-input" value="RIGHT" /><br />
+          <input type="button" data-shape="cube" class="menu-content-start-stop-group animation-input"
+            value="START" /><br />
+          <select name="texture" data-shape="cube" class="menu-content-dropdown-group texture-input">
+            <option value="0">Silver</option>
+            <option value="1">Earth</option>
+            <option value="2">USM</option>
+            <option value="3">Charmander</option>
+            <option value="4">Chikorita</option>
+            <option value="5">Totodile</option>
           </select>
         </div>
-
-        <div class="menu-content-title">Shape 2</div>
+        <div class="menu-content-title">Sphere</div>
         <div class="menu-content-group">
-          <input type="button" class="menu-content-button-group" value="UP" />
-          <input type="button" class="menu-content-button-group" value="DOWN" />
-          <input type="button" class="menu-content-button-group" value="LEFT" />
-          <input type="button" class="menu-content-button-group" value="RIGHT" /><br />
-          <input type="button" class="menu-content-start-stop-group" value="START/STOP" /><br />
-          <select name="texture" class="menu-content-dropdown-group">
-            <option value="no-texture">No Texture</option>
-            <option value="image1">Image 1</option>
-            <option value="image2">Image 2</option>
-            <option value="image3">Image 3</option>
+          <input type="button" data-shape="sphere" data-direction="up" class="menu-content-button-group direction-input"
+            value="UP" />
+          <input type="button" data-shape="sphere" data-direction="down"
+            class="menu-content-button-group direction-input" value="DOWN" />
+          <input type="button" data-shape="sphere" data-direction="left"
+            class="menu-content-button-group direction-input" value="LEFT" />
+          <input type="button" data-shape="sphere" data-direction="right"
+            class="menu-content-button-group direction-input" value="RIGHT" /><br />
+          <input type="button" data-shape="sphere" class="menu-content-start-stop-group animation-input"
+            value="START" /><br />
+          <select name="texture" data-shape="sphere" class="menu-content-dropdown-group texture-input">
+            <option value="0">Silver</option>
+            <option value="1">Earth</option>
+            <option value="2">USM</option>
+            <option value="3">Charmander</option>
+            <option value="4">Chikorita</option>
+            <option value="5">Totodile</option>
           </select>
         </div>
-
-        <div class="menu-content-title">Shape 3</div>
+        <div class="menu-content-title">Tetrahedron</div>
         <div class="menu-content-group">
-          <input type="button" class="menu-content-button-group" value="UP" />
-          <input type="button" class="menu-content-button-group" value="DOWN" />
-          <input type="button" class="menu-content-button-group" value="LEFT" />
-          <input type="button" class="menu-content-button-group" value="RIGHT" /><br />
-          <input type="button" class="menu-content-start-stop-group" value="START/STOP" /><br />
-          <select name="texture" class="menu-content-dropdown-group">
-            <option value="no-texture">No Texture</option>
-            <option value="image1">Image 1</option>
-            <option value="image2">Image 2</option>
-            <option value="image3">Image 3</option>
+          <input type="button" data-shape="tetrahedron" data-direction="up"
+            class="menu-content-button-group direction-input" value="UP" />
+          <input type="button" data-shape="tetrahedron" data-direction="down"
+            class="menu-content-button-group direction-input" value="DOWN" />
+          <input type="button" data-shape="tetrahedron" data-direction="left"
+            class="menu-content-button-group direction-input" value="LEFT" />
+          <input type="button" data-shape="tetrahedron" data-direction="right"
+            class="menu-content-button-group direction-input" value="RIGHT" /><br />
+          <input type="button" data-shape="tetrahedron" class="menu-content-start-stop-group animation-input"
+            value="START" /><br />
+          <select name="texture" data-shape="tetrahedron" class="menu-content-dropdown-group texture-input">
+            <option value="0">Silver</option>
+            <option value="1">Earth</option>
+            <option value="2">USM</option>
+            <option value="3">Charmander</option>
+            <option value="4">Chikorita</option>
+            <option value="5">Totodile</option>
           </select>
         </div>
-
         <div class="menu-content-title">Ambient Light</div>
         <div class="menu-content-group">
           <label for="ambient-reflection" class="menu-content-label-group">Ambient Reflection</label><br />
-          <input type="range" name="ambient-reflection" class="menu-content-slider-group settings" min="0.0" max="1.0"
-            step="0.1" value="0.0" />
-          <input type="text" class="textbox" value="0.0" readonly /><br />
-
+          <input type="range" name="ambient-reflection" data-light="ambient"
+            class="menu-content-slider-group light-input" min="0.0" max="1.0" step="0.1" value="0.0" />
+          <input type="text" data-light="ambient" class="textbox light-output" value="0.0" readonly /><br />
           <label for="ambient-color" class="menu-content-label-group">Ambient Colour</label><br />
-          <input type="color" class="menu-content-colorpicker-group" name="ambient-color" value="#ffffff" />
+          <input type="color" data-material="ambient" class="menu-content-colorpicker-group material-input"
+            name="ambient-color" value="#ffffff" />
         </div>
-
         <div class="menu-content-title">Diffuse Light</div>
         <div class="menu-content-group">
           <label for="diffuse-reflection" class="menu-content-label-group">Diffuse Reflection</label><br />
-          <input type="range" name="diffuse-reflection" class="menu-content-slider-group settings" min="0.0" max="1.0"
-            step="0.1" value="0.0" />
-          <input type="text" class="textbox" value="0.0" readonly /><br />
-
+          <input type="range" name="diffuse-reflection" data-light="diffuse"
+            class="menu-content-slider-group light-input" min="0.0" max="1.0" step="0.1" value="0.0" />
+          <input type="text" data-light="diffuse" class="textbox light-output" value="0.0" readonly /><br />
           <label for="diffuse-color" class="menu-content-label-group">Diffuse Colour</label><br />
-          <input type="color" class="menu-content-colorpicker-group" name="diffuse-color" value="#ffffff" />
+          <input type="color" data-material="diffuse" class="menu-content-colorpicker-group material-input"
+            name="diffuse-color" value="#ffffff" />
         </div>
-
         <div class="menu-content-title">Specular Light</div>
         <div class="menu-content-group">
           <label for="specular-reflection" class="menu-content-label-group">Specular Reflection</label><br />
-          <input type="range" name="specular-reflection" class="menu-content-slider-group settings" min="0.0" max="1.0"
-            step="0.1" value="0.0" />
-          <input type="text" class="textbox" value="0.0" readonly /><br />
-
+          <input type="range" name="specular-reflection" data-light="specular"
+            class="menu-content-slider-group light-input" min="0.0" max="1.0" step="0.1" value="0.0" />
+          <input type="text" data-light="specular" class="textbox light-output" value="0.0" readonly /><br />
           <label for="specular-color" class="menu-content-label-group">Specular Colour</label><br />
-          <input type="color" class="menu-content-colorpicker-group" name="specular-color" value="#ffffff" />
+          <input type="color" data-material="specular" class="menu-content-colorpicker-group material-input"
+            name="specular-color" value="#ffffff" />
         </div>
-
         <div class="menu-content-title">Material Shininess</div>
         <div class="menu-content-group">
-          <label for="shininess-reflection" class="menu-content-label-group">Shininess Reflection</label><br />
-          <input type="range" name="shininess-reflection" class="menu-content-slider-group settings" min="0.0" max="1.0"
-            step="0.1" value="0.0" />
-          <input type="text" class="textbox" value="0.0" readonly />
+          <label for="shininess-reflection" class="menu-content-label-group">Shininess</label><br />
+          <input type="range" name="shininess-reflection" id="shininess-input" class="menu-content-slider-group"
+            min="0.0" max="1.0" step="0.1" value="0.0" />
+          <input type="text" id="shininess-output" class="textbox" value="0.0" readonly />
         </div>
-
         <div class="menu-content-title">Light Position</div>
         <div class="menu-content-group">
           <label for="x" class="menu-content-label-group">X</label><br />
-          <input type="range" name="x" class="menu-content-slider-group settings" min="-1.0" max="1.0" step="0.1"
-            value="-1.0" />
-          <input type="text" class="textbox" value="0.0" readonly /><br />
-
+          <input type="range" name="x" data-index="0" class="menu-content-slider-group light-position-input" min="-1.0"
+            max="1.0" step="0.1" value="0.0" />
+          <input type="text" data-index="0" class="textbox light-position-output" value="0.0" readonly /><br />
           <label for="y" class="menu-content-label-group">Y</label><br />
-          <input type="range" name="y" class="menu-content-slider-group settings" min="-1.0" max="1.0" step="0.1"
-            value="-1.0" />
-          <input type="text" class="textbox" value="0.0" readonly /><br />
-
+          <input type="range" name="y" data-index="1" class="menu-content-slider-group light-position-input" min="-1.0"
+            max="1.0" step="0.1" value="0.0" />
+          <input type="text" data-index="1" class="textbox light-position-output" value="0.0" readonly /><br />
           <label for="z" class="menu-content-label-group">Z</label><br />
-          <input type="range" name="z" class="menu-content-slider-group settings" min="-1.0" max="1.0" step="0.1"
-            value="-1.0" />
-          <input type="text" class="textbox" value="0.0" readonly />
+          <input type="range" name="z" data-index="2" class="menu-content-slider-group light-position-input" min="-1.0"
+            max="1.0" step="0.1" value="0.0" />
+          <input type="text" data-index="2" class="textbox light-position-output" value="0.0" readonly />
         </div>
       </div>
     </div>
@@ -190,8 +201,8 @@
   <img src="img/earth.jpg" crossorigin="anonymous" hidden />
   <img src="img/usm.jpg" crossorigin="anonymous" hidden />
   <img src="img/charmander.jpg" crossorigin="anonymous" hidden />
-  <img src="img/totodile.jpg" crossorigin="anonymous" hidden />
   <img src="img/chikorita.jpg" crossorigin="anonymous" hidden />
+  <img src="img/totodile.jpg" crossorigin="anonymous" hidden />
 </body>
 
 </html>

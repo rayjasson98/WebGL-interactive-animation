@@ -69,7 +69,7 @@ input {
   margin: 5px;
   width: 65px;
   height: 30px;
-  background-color:rgb(60, 253, 237);
+  background-color: rgb(60, 253, 237);
 }
 
 .menu-content-start-stop-group {
@@ -93,7 +93,7 @@ input {
   margin: 5px;
   width: 145px;
   height: 30px;
-  background-color:rgb(255, 85, 127);
+  background-color: rgb(255, 85, 127);
   color: #fff;
   padding-left: 5px;
 }
@@ -121,23 +121,24 @@ input {
 }
 
 .menu-content-button-group:hover {
-  background-color:rgb(19, 161, 255);
+  background-color: rgb(19, 161, 255);
   cursor: pointer;
 }
 
 .menu-content-button-group:disabled {
   background-color: grey;
+  cursor: default;
 }
 
 .menu-content-start-stop-group:hover {
-  background-color:rgb(48, 224, 101);
+  background-color: rgb(48, 224, 101);
   cursor: pointer;
 }
 
 .menu-content-slider-group:hover {
   background-color: #7f00ff;
   cursor: pointer;
-  opacity: 1.0;
+  opacity: 1;
 }
 
 .menu-content-slider-group:disabled {
