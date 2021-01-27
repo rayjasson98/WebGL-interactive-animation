@@ -136,6 +136,11 @@ input {
   cursor: pointer;
 }
 
+.menu-content-start-stop-group:disabled {
+  background-color: grey;
+  cursor: default;
+}
+
 .menu-content-slider-group:hover {
   background-color: #7f00ff;
   cursor: pointer;

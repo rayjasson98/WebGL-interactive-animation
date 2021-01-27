@@ -100,6 +100,7 @@ function setMaterialParams() {
 }
 
 function setAnimation() {
+  // Setting up, down, left, right buttons for each shape
   const directionInputs = Array.from(
     document.querySelectorAll(".direction-input")
   );
@@ -134,6 +135,7 @@ function setAnimation() {
     });
   });
 
+  // Setting animation() - rightward rotation by 360°
   const animationInputs = Array.from(
     document.querySelectorAll(".animation-input")
   );
@@ -153,11 +155,17 @@ function setAnimation() {
           settings[shape].rotationAngle.y -= 10.0;
         }, 50);
 
-        if (enter === true) keyDownInterval[shape].enter = interval;
+        if (enter === true) {
+          keyDownInterval[shape].enter = interval;
+          animationInputs.forEach(a => (a.disabled = true));
+        }
         directionInputs.forEach(d => (d.disabled = true));
         animationBtns[shape].value = "STOP";
       } else {
-        if (enter === true) interval = keyDownInterval[shape].enter;
+        if (enter === true) {
+          interval = keyDownInterval[shape].enter;
+          animationInputs.forEach(a => (a.disabled = false));
+        }
         clearInterval(interval);
         directionInputs.forEach(d => (d.disabled = false));
         animationBtns[shape].value = "START";
@@ -165,6 +173,7 @@ function setAnimation() {
     };
   }
 
+  // Setting start/stop buttons for each shape
   animationInputs.forEach(a => {
     const shape = a.dataset.shape;
     const directionInputs = document.querySelectorAll(
@@ -177,6 +186,7 @@ function setAnimation() {
     );
   });
 
+  // Setting animation for all shapes using ENTER and ARROW keys
   document.addEventListener("keydown", e => {
     if (keyDown === true) return;
     else keyDown = true;
