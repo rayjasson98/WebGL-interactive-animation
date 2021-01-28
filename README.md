@@ -7,7 +7,7 @@
 
 ## :computer: Program Execution
 
-Play around with the cube, the sphere and the tetrahedron using various lighting and material parameters in the program!
+Play around with the cube, the sphere and the tetrahedron using various lighting and material parameters in the program! [Try it here!](https://rayjasson98.github.io/WebGL-interactive-animation/)
 
 <p align=center><img src="/docs/img/ui.png"></p>
 <p align="center"><i>UI of the WebGL program</i></p>
