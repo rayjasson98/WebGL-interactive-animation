@@ -1,6 +1,6 @@
 # WebGL Interactive Animation
 
-*[Ray Jasson](mailto:holmesqueen2070@yahoo.com)*<br>
+*[Ray Jasson](mailto:haojie.dev@gmail.com)*<br>
 *28/01/2021*<br>
 
 <br>
